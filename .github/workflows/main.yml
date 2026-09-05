@@ -1,10 +1,10 @@
-name: Android APK
+name: Build Android APK
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build:
@@ -23,14 +23,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Setup Expo
-        run: npm install -g expo-cli eas-cli
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Expo and EAS
+        run: npm install -g expo eas-cli
 
       - name: Generate Android project
         run: npx expo prebuild --platform android --non-interactive
@@ -38,12 +41,12 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x android/gradlew
 
-      - name: Build Android APK
+      - name: Build APK
         working-directory: android
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-         name: android-debug-apk
-         path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: lingomate-android-apk
+          path: android/app/build/outputs/apk/release/app-release.apk
