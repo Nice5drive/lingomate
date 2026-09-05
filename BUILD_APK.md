@@ -26,4 +26,4 @@ Nach Abschluss zeigt EAS einen Download-Link zur `.apk`. Diese APK kannst du auf
 
 ## Wichtig
 
-Nur mit den heruntergeladenen Projektdateien auf Android lässt sich eine APK nicht lokal erzeugen. Android benötigt dazu entweder Android SDK/Gradle oder einen Cloud-Build-Dienst. Dieses Projekt ist deshalb direkt für EAS Build vorbereitet.
+Nur mit den heruntergeladenen Projektdateien auf Android lässt sich eine APK nicht lokal erzeugen. Android benötigt dazu entweder Android SDK/Gradle oder einen Cloud-Build-Dienst. Dieses Projekt ist deshalb direkt für EAS Build vorbereitet. 
