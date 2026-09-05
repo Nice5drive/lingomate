@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "LingoMate",
+    "slug": "lingomate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#071b2f"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lingomate.prototype"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#071b2f"
+      },
+      "package": "com.lingomate.prototype",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "scheme": "lingomate"
+  }
+}
